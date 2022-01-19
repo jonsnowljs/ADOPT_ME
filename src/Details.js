@@ -29,7 +29,6 @@ class Details extends Component {
     const { animal, breed, city, state, description, name, images } =
       this.state;
 
-    throw new Error("lol it broke");
     return (
       <div className="details">
         <Carousel images={images} />
