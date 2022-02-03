@@ -29,16 +29,20 @@ const SearchParams = () => {
   return (
     <div className="my-0 mx-auto w-11/12">
       <form
-        className="p-10 mb-10 rounded-lg bg-gray-200 shadow-lg flex flex-col justify-center items-center divide-y divide-gray-900"
+        className="p-10 mb-10 rounded-3xl shadow-2xl flex flex-col justify-center items-center divide-y divide-gray-900"
         onSubmit={(e) => {
           e.preventDefault();
           requestPets();
+        }}
+        style={{
+          background:
+            "url(http://pets-images.dev-apis.com/pets/wallpaperA.jpg)",
         }}
       >
         <label className="search-label" htmlFor="location">
           Location
           <input
-            className="search-control"
+            className="search-control border-gray-600 border"
             id="location"
             onChange={(e) => setLocation(e.target.value)}
             value={location.toUpperCase()}
@@ -93,7 +97,10 @@ const SearchParams = () => {
             <option value="mediumorchid">Medium Orchid</option>
           </select>
         </label>
-        <button className="rounded px-6 py-2 text-white hover:opacity-70" style={{ backgroundColor: theme }}>
+        <button
+          className="rounded px-6 py-2 text-white hover:opacity-70"
+          style={{ backgroundColor: theme }}
+        >
           Submit
         </button>
       </form>

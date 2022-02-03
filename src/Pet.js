@@ -10,13 +10,17 @@ const Pet = (props) => {
   }
 
   return (
-    <Link to={`/details/${id}`} className="relative block">
-      <div>
-        <img src={hero} alt={name} />
+    <Link
+      to={`/details/${id}`}
+      className="rounded overflow-hidden shadow-lg
+    "
+    >
+      <div className="h-50">
+        <img src={hero} alt={name} className="object-scale-down rounded" />
       </div>
-      <div className="absolute bottom-0 left-0 bg-gradient-to-tr from-white to-transparent pr-2 pt-2">
-        <h1>{name}</h1>
-        <h2>{`${animal} - ${breed} - ${location}`}</h2>
+      <div className="px-6 py-4">
+        <div className="font-bold text-xl mb-2">{name}</div>
+        <p className="text-gray-700 text-base">{`${animal} - ${breed} - ${location}`}</p>
       </div>
     </Link>
   );

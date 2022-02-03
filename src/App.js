@@ -4,22 +4,27 @@ import SearchParams from "./SearchParams";
 import Details from "./Details";
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import ThemeContext from "./ThemeContext";
+import { SiDatadog } from "react-icons/si";
+;
+
 
 const App = () => {
   const theme = useState("darkblue");
   return (
     <ThemeContext.Provider value={theme}>
-      <div
-        className="p-0 m-0"
-        style={{
-          background:
-            "url(http://pets-images.dev-apis.com/pets/wallpaperA.jpg)",
-        }}
-      >
+      <div className="p-0 m-0">
         <Router>
-          <header className="w-full mb-10 text-center p-7 bg-gradient-to-b from-purple-400 via-pink-500 to-red-500">
-            <Link to="/" className="text-6xl text-white hover:text-gray-200">
-              <h1>Adopt Me!</h1>
+          <header
+            className="font-sans w-full mb-10 text-center"
+          >
+            <Link
+              to="/"
+              className=" text-7xl font-semibold p-7 text-blue-400 hover:text-blue-800"
+            >
+              <h1 className="flex items-center justify-center ">
+                Adopt Me!
+                <SiDatadog />
+              </h1>
             </Link>
           </header>
           <Switch>
