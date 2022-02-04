@@ -16,11 +16,22 @@ export default class Carousel extends Component {
 
   render() {
     const { active } = this.state;
-    const { images } = this.props;
+    const { images, description, animal, breed, city, state } = this.props;
     return (
-      <div className="carousel">
-        <img src={images[active]} alt="animal" />
-        <div className=" avatar online">
+      <div className="">
+        <div className="card lg:card-side card-bordered">
+          <figure className="px-10 pt-10">
+            <img src={images[active]} className="rounded-xl" alt="dog-img" />
+          </figure>
+          <div className="card-body">
+            <h2 className="card-title">{`${animal} - ${breed} - ${city}, ${state}`}</h2>
+            <p>{description}</p>
+            <div className="card-actions">
+              <button className="btn btn-outline btn-accent">More info</button>
+            </div>
+          </div>
+        </div>
+        <div className="">
           {images.map((photo, index) => (
             // eslint-disable-next-line
             <img

@@ -35,7 +35,7 @@ class Details extends Component {
 
     return (
       <div className="details">
-        <Carousel images={images} />
+        <Carousel images={images} description={description} animal={animal} breed={breed} city={city} state={state} />
         <div>
           <h1>{name}</h1>
           <h2>{`${animal} - ${breed} - ${city}, ${state}`}</h2>
