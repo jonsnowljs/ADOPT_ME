@@ -12,7 +12,7 @@ const Pet = (props) => {
   return (
     <Link
       to={`/details/${id}`}
-      className="rounded overflow-hidden shadow-lg
+      className="overflow-hidden shadow-lg rounded-lg
     "
     >
       <div className="h-50">
