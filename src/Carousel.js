@@ -20,7 +20,7 @@ export default class Carousel extends Component {
     return (
       <div className="carousel">
         <img src={images[active]} alt="animal" />
-        <div className="carousel-smaller">
+        <div className=" avatar online">
           {images.map((photo, index) => (
             // eslint-disable-next-line
             <img

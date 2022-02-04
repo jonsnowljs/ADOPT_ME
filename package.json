@@ -32,6 +32,7 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
   },
   "dependencies": {
+    "daisyui": "^1.25.4",
     "first": "^0.0.3",
     "reac": "^0.0.0",
     "react": "^17.0.1",
