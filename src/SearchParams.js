@@ -42,6 +42,7 @@ const SearchParams = () => {
         <label className="search-label" htmlFor="location">
           Location
           <input
+            type="text"
             className="search-control border-gray-600 border"
             id="location"
             onChange={(e) => setLocation(e.target.value)}
