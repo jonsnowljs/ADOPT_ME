@@ -15,7 +15,7 @@ const App = () => {
       <div className="p-0 m-0">
         <Router>
           <header
-            className="font-sans w-full mb-10 text-center"
+            className="font-sans w-full text-center"
           >
             <Link
               to="/"

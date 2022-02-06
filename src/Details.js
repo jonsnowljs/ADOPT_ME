@@ -3,7 +3,8 @@ import { withRouter } from "react-router-dom";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
 import ThemeContext from "./ThemeContext";
-import Modal from "./Modal";
+
+import ModalTemplate from "./ModalTemplate";
 class Details extends Component {
   state = { loading: true, showModal: false };
 
@@ -34,35 +35,49 @@ class Details extends Component {
       this.state;
 
     return (
-      <div className="details">
-        <Carousel images={images} description={description} animal={animal} breed={breed} city={city} state={state} />
-        <div>
-          <h1>{name}</h1>
-          <h2>{`${animal} - ${breed} - ${city}, ${state}`}</h2>
-          <ThemeContext.Consumer>
-            {([theme]) => (
-              <button
-                className="btn btn-primary"
-                onClick={this.toggleModal}
-                style={{ backgroundColor: theme }}
-              >
-                Adopt {name}
-              </button>
-            )}
-          </ThemeContext.Consumer>
-          <p>{description}</p>
+      <div className="mx-20 card lg:card-side card-bordered">
+        <Carousel
+          images={images}
+          description={description}
+          animal={animal}
+          breed={breed}
+          city={city}
+          state={state}
+        />
+        <div className="card-body  justify-center mx-10">
+          <h1 className="card-title font-bold text-3xl">{name}</h1>
+          <h2 className="card-title">{`${animal} - ${breed} - ${city}, ${state}`}</h2>
+          <p card-body>{description}</p>
+
+          <div className="card-actions justify-center">
+            <ThemeContext.Consumer>
+              {([theme]) => (
+                <button
+                  className="btn btn-primary"
+                  onClick={this.toggleModal}
+                  style={{ backgroundColor: theme }}
+                >
+                  Adopt {name}
+                </button>
+              )}
+            </ThemeContext.Consumer>
+          </div>
           {showModal ? (
-            <Modal>
-              <h1>Would you like to adopt {name}?</h1>
-              <div className="buttons">
-                <button className="btn btn-primary" onClick={this.adopt}>
-                  Yes
-                </button>
-                <button className="btn btn-primary" onClick={this.toggleModal}>
-                  No
-                </button>
-              </div>
-            </Modal>
+            <ModalTemplate name={name}/>
+            // <Modal>
+            //   <h1>Would you like to adopt {name}?</h1>
+            //   <div className="buttons">
+            //     <button className="btn btn-secondary" onClick={this.adopt}>
+            //       Yes
+            //     </button>
+            //     <button
+            //       className="btn btn-secondary"
+            //       onClick={this.toggleModal}
+            //     >
+            //       No
+            //     </button>
+            //   </div>
+            // </Modal>
           ) : null}
         </div>
       </div>
